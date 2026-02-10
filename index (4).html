@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Online Exam System</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+}
+header{
+    background:#2a6df4;
+    color:white;
+    padding:20px;
+    text-align:center;
+    font-size:28px;
+}
+.container{
+    max-width:800px;
+    margin:20px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+h2{
+    color:#2a6df4;
+}
+.question{
+    margin-bottom:15px;
+}
+.question p{
+    font-weight:bold;
+}
+button{
+    background:#2a6df4;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:16px;
+}
+button:hover{
+    background:#1f55c9;
+}
+#result{
+    font-size:20px;
+    margin-top:20px;
+    color:green;
+    font-weight:bold;
+}
+.contact{
+    margin-top:30px;
+    background:#eef3ff;
+    padding:20px;
+    border-radius:10px;
+}
+footer{
+    text-align:center;
+    padding:15px;
+    background:#2a6df4;
+    color:white;
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    📝 Online Exam System
+</header>
+
+<div class="container">
+
+    <h2>📘 Online Test</h2>
+
+    <form id="examForm">
+
+        <div class="question">
+            <p>1. HTML stands for?</p>
+            <input type="radio" name="q1" value="a"> Hyper Text Markup Language<br>
+            <input type="radio" name="q1" value="b"> High Text Machine Language<br>
+            <input type="radio" name="q1" value="c"> Hyper Tool Markup Language
+        </div>
+
+        <div class="question">
+            <p>2. Which tag is used for paragraph?</p>
+            <input type="radio" name="q2" value="a"> &lt;div&gt;<br>
+            <input type="radio" name="q2" value="b"> &lt;p&gt;<br>
+            <input type="radio" name="q2" value="c"> &lt;span&gt;
+        </div>
+
+        <div class="question">
+            <p>3. JavaScript is used for?</p>
+            <input type="radio" name="q3" value="a"> Styling<br>
+            <input type="radio" name="q3" value="b"> Structure<br>
+            <input type="radio" name="q3" value="c"> Interactivity
+        </div>
+
+        <button type="button" onclick="submitExam()">Submit Exam</button>
+    </form>
+
+    <div id="result"></div>
+
+    <!-- Contact Details -->
+    <div class="contact">
+        <h2>📞 Contact Details</h2>
+        <p>👨‍🏫 Exam Admin: Online Exam Team</p>
+        <p>📧 Email: onlineexam@gmail.com</p>
+        <p>📱 Phone: +91 98765 43210</p>
+        <p>📍 Address: Chennai, Tamil Nadu</p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Online Exam System | Student Project
+</footer>
+
+<script>
+function submitExam(){
+    let score = 0;
+
+    let q1 = document.querySelector('input[name="q1"]:checked');
+    let q2 = document.querySelector('input[name="q2"]:checked');
+    let q3 = document.querySelector('input[name="q3"]:checked');
+
+    if(q1 && q1.value === "a") score++;
+    if(q2 && q2.value === "b") score++;
+    if(q3 && q3.value === "c") score++;
+
+    document.getElementById("result").innerHTML =
+        "✅ Your Score: " + score + " / 3";
+}
+</script>
+
+</body>
+</html>
